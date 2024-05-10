@@ -1,6 +1,6 @@
 ﻿namespace CadastrarProduto
 {
-    partial class principal
+    partial class Principal
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.inputDataFinal = new System.Windows.Forms.DateTimePicker();
+            this.usuarioCadastrado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,12 +139,22 @@
             this.inputDataFinal.Size = new System.Drawing.Size(220, 20);
             this.inputDataFinal.TabIndex = 9;
             // 
-            // principal
+            // usuarioCadastrado
+            // 
+            this.usuarioCadastrado.AutoSize = true;
+            this.usuarioCadastrado.Location = new System.Drawing.Point(12, 12);
+            this.usuarioCadastrado.Name = "usuarioCadastrado";
+            this.usuarioCadastrado.Size = new System.Drawing.Size(35, 13);
+            this.usuarioCadastrado.TabIndex = 11;
+            this.usuarioCadastrado.Text = "label4";
+            // 
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.usuarioCadastrado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.inputDataFinal);
             this.Controls.Add(this.button1);
@@ -155,7 +166,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.cadastar);
-            this.Name = "principal";
+            this.Name = "Principal";
             this.Text = "Principal";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -176,6 +187,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker inputDataFinal;
+        private System.Windows.Forms.Label usuarioCadastrado;
     }
 }
 

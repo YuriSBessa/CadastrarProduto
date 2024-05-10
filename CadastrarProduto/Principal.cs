@@ -11,12 +11,15 @@ using System.Windows.Forms;
 
 namespace CadastrarProduto
 {
-    public partial class principal : Form
+    public partial class Principal : Form
     {
         private ProdutosRepository repository = new ProdutosRepository();
-        public principal()
+        private string userName { get; set; }
+        public Principal(string userName)
         {
             InitializeComponent();
+            this.userName = userName;
+            usuarioCadastrado.Text = $"Usuario cadastrado: {this.userName}";
         }
 
         private void cadastar_Click(object sender, EventArgs e)
@@ -42,8 +45,22 @@ namespace CadastrarProduto
 
         private void deletar_Click(object sender, EventArgs e)
         {
-            Deletar deletar = new Deletar();
-            deletar.Show();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dataGridView1.SelectedRows[0];
+                var result = MessageBox.Show("Você deseja deletar esse produto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(result == DialogResult.Yes)
+                {
+                    repository.DeletarProduto(int.Parse(row.Cells["ID"].Value.ToString()));
+                }
+            }
+
+            else
+            {
+                Deletar deletar = new Deletar();
+                deletar.Show();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
